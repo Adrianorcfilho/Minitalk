@@ -1,0 +1,15 @@
+
+◦ write
+◦ ft_printf
+◦ signal (SIGUSR1, sighandler)
+◦ sigemptyset
+◦ sigaddset
+◦ sigaction
+◦ kill
+◦ getpid
+◦ malloc
+◦ free
+◦ pause
+◦ sleep
+◦ usleep
+◦ exit
