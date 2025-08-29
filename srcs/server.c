@@ -6,7 +6,7 @@
 /*   By: adrocha- <adrocha-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 17:51:19 by adrocha-          #+#    #+#             */
-/*   Updated: 2025/08/26 20:50:09 by adrocha-         ###   ########.fr       */
+/*   Updated: 2025/08/29 17:26:59 by adrocha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	binary_change(int bin, char *str)
 		str[index++] = c;
 		if (c == 0)
 		{
-			printf("%s\n", str);
+			ft_printf("%s\n", str);
 			index = 0;
 			free(str);
 		}
@@ -87,7 +87,7 @@ int	main(void)
 	struct sigaction	action;
 
 	pid = getpid();
-	printf("Server PID: %d\n", pid);
+	ft_printf("Server PID: %d\n", pid);
 	ft_bzero(&action, sizeof(action));
 	sigaddset(&action.sa_mask, SIGUSR1);
 	sigaddset(&action.sa_mask, SIGUSR2);

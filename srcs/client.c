@@ -6,7 +6,7 @@
 /*   By: adrocha- <adrocha-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 17:51:13 by adrocha-          #+#    #+#             */
-/*   Updated: 2025/08/26 20:50:20 by adrocha-         ###   ########.fr       */
+/*   Updated: 2025/08/29 17:26:24 by adrocha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void handler(int signum)
 {
 	if (signum == SIGUSR2)
 	{
-		printf("Mensagem recebida\n");
+		ft_printf("Mensagem recebida\n");
 		exit(0);
 	}	
 }

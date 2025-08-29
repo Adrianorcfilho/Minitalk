@@ -6,7 +6,7 @@
 /*   By: adrocha- <adrocha-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 17:54:27 by adrocha-          #+#    #+#             */
-/*   Updated: 2025/08/26 20:37:54 by adrocha-         ###   ########.fr       */
+/*   Updated: 2025/08/29 17:50:28 by adrocha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,14 @@
 # include <unistd.h>
 # include <signal.h>
 # include <sys/types.h>
+#include <stdarg.h>
+
+int	ft_printf(const char *format, ...);
+int	ft_putstr(char *str);
+int	ft_putchar(int c);
+int	ft_putnbr(int nb);
+int	ft_put_unsigned(unsigned int n);
+int	ft_put_hexa(unsigned int n, char format);
+int	ft_put_ptr(void *ptr);
 
 #endif
