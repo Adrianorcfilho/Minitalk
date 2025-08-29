@@ -6,7 +6,7 @@
 /*   By: adrocha- <adrocha-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 17:51:13 by adrocha-          #+#    #+#             */
-/*   Updated: 2025/08/29 19:54:33 by adrocha-         ###   ########.fr       */
+/*   Updated: 2025/08/29 20:04:04 by adrocha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ void	my_msg(int pid, char c)
 		usleep(1500);
 	}
 }
+
 void	handler(int signum)
 {
 	if (signum == SIGUSR2)

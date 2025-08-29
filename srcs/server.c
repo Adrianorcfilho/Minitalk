@@ -6,7 +6,7 @@
 /*   By: adrocha- <adrocha-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 17:51:19 by adrocha-          #+#    #+#             */
-/*   Updated: 2025/08/29 19:58:39 by adrocha-         ###   ########.fr       */
+/*   Updated: 2025/08/29 20:03:46 by adrocha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,10 @@ int	binary_change(int bin, char *str)
 
 void	sighandler(int signum, siginfo_t *info)
 {
-	static char		*str;
+	static char			*str;
 	static unsigned int	len;
-	static int	i;
-	static int	m;
+	static int			i;
+	static int			m;
 
 	if (i < 32)
 		len |= (signum << i++);
@@ -83,7 +83,7 @@ void	sighandler(int signum, siginfo_t *info)
 
 int	main(void)
 {
-	int pid;
+	int					pid;
 	struct sigaction	action;
 
 	pid = getpid();
