@@ -6,16 +6,16 @@
 /*   By: adrocha- <adrocha-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 17:51:13 by adrocha-          #+#    #+#             */
-/*   Updated: 2025/08/29 17:26:24 by adrocha-         ###   ########.fr       */
+/*   Updated: 2025/08/29 19:42:52 by adrocha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minitalk.h"
 
-void ft_strlen(char *s, int pid)
+void	ft_strlen(char *s, int pid)
 {
 	int	bit;
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i])
@@ -45,26 +45,38 @@ void	my_msg(int pid, char c)
 		usleep(1500);
 	}
 }
-void handler(int signum)
+void	handler(int signum)
 {
 	if (signum == SIGUSR2)
 	{
 		ft_printf("Mensagem recebida\n");
 		exit(0);
-	}	
+	}
+}
+
+int	validate_pid(char *pid_str)
+{
+	int	pid;
+
+	pid = atoi(pid_str);
+	if (pid <= 0)
+		exit(1);
+	if (kill(pid, 0) == -1)
+		exit(1);
+	return (pid);
 }
 
 int	main(int ac, char *av[])
 {
-	int pid;
-	int i;
-	
+	int	pid;
+	int	i;
+
 	if (ac != 3)
 	{
 		write(2, "Expect: .client <PID> <message>\n", 32);
 		return (1);
 	}
-	pid = atoi(av[1]);
+	pid = validate_pid(av[1]);
 	i = 0;
 	signal(SIGUSR2, handler);
 	signal(SIGUSR1, handler);
@@ -73,7 +85,7 @@ int	main(int ac, char *av[])
 	{
 		my_msg(pid, av[2][i]);
 		if (!av[2][i])
-			break;
+			break ;
 		i++;
 	}
 	pause();
